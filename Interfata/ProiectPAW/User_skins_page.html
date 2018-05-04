@@ -28,36 +28,7 @@ ul{
 .nav a:hover{
 	background-color: orange;
 }
-ul li ul li {
-	overflow:auto;
-	position: absolute;
-	float:left;
-	width: 200px;
-	height: 40px;
-	background-color: purple;
-	line-height: 10px;
-	text-align: center;
-	font-size: 20px;
-}
 
-ul li ul li a{
-	text-decoration:none;
-	color: white;
-}
-li ul li {
-	display:none;
-}
-ul li ul li{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-ul li:hover ul li {
-	display:block;
-}
-li{
-	float:left;
-}
 a{
 	color: white;
 	weidth:125px;
@@ -67,8 +38,51 @@ a{
 	padding:15px;
 	font-size:18px;
 	font-family:"calibri";
+	border-left: 1px solid #190707;
+}
+.dropbtn{
+	background-color: dark-orange;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
 }
 
+.dropdown{
+	position:absolute;
+	display: inline-block;
+}
+
+.dropdown-content{
+	display:none;
+	position:absolute;
+	background-color:purple;
+	min-width:160px;
+	z-index:1;
+}
+
+.dropdown-content a{
+	color:white;
+	padding:12px, 16px;
+	text-decoration:none;
+	display:block;
+	border-bottom: 2px solid #190707;
+	border-left: 1px solid #190707;
+	border-right:1px solid #190707;
+}
+
+.dropdown-content a:hover {
+	background-color: orange;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: orange;
+}
 .search{
 	margin-top:-40px;
 	float:right;
@@ -210,15 +224,17 @@ position: absolute;
 		<li><a href ="#"> Items</a></li>
 		<li><a href ="#"> Abilities</a></li>
 		<li><a href ="#"> Runes</a></li>
-		<li><a href ="#"> Skins</a></li>
-		<li><a href ="#"> Setups</a>
-			 <ul>
-				<li><a href="#">Create setup</a></li>
-				<li><a href="#">Delete setup</a></li>
-				<li><a href="#">Update a setup</a></li>
-				<li><a href="#">My setups</a></li>
-			 </ul>
-		</li>
+		<li><a href ="User_skins_page.html"> Skins</a></li>
+		<div class ="dropdown"> 
+			 <button class ="dropbtn">Setups</button>
+			 <div class="dropdown-content">
+				<a href="#">Create setup</a>
+				<a href="#">Delete setup</a>
+				<a href="#">Update a setup</a>
+				<a href="#">My setups</a>
+			 </div>
+		</div>
+		
 	</ul>
 </div>
 <form class ="search">
